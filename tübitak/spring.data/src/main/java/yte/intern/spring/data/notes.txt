@@ -1,0 +1,6 @@
+Derived querylerin sıkıntıları
+  Method isimleri çok uzun olabiliyor.
+  Join,like veya inner query gibi karmaşık queryler için yetersiz kalıyor.
+
+
+

@@ -1,0 +1,14 @@
+@Version alanı genellikle Hibernate gibi JPA (Java Persistence API) implementasyonlarında,
+optimistik kilitleme (optimistic locking) stratejileri için kullanılır. Optimistik kilitleme,
+ bir kaydın iki ayrı kullanıcı tarafından aynı anda değiştirilmesini önlemek için kullanılan bir tekniktir.
+
+Optimistik kilitleme şu şekilde çalışır:
+
+İki kullanıcı aynı kaydı aynı anda alır.
+Birinci kullanıcı kaydı günceller ve veritabanındaki version alanını artırır.
+İkinci kullanıcı aynı kaydı daha sonra güncellemek istediğinde, güncelleme işlemi sırasında veritabanındaki version alanı
+ kontrol edilir. Eğer version değeri değişmişse, bu demek oluyor ki kayıt bir başkası tarafından güncellenmiş ve
+ ikinci kullanıcının güncel veriye göre güncelleme yapması gerekmektedir.
+Bu durumda @Version alanı, optimistic locking stratejisinde kullanılan bir mekanizmayı temsil eder.
+ Bu sayede iki kullanıcı aynı anda aynı kaydı değiştirmeye çalıştığında, sistem bu durumu algılar ve
+ kullanıcılara hatalı güncelleme yapma fırsatı vermez.

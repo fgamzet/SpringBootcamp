@@ -1,0 +1,27 @@
+Aynı tanımlı birden fazla bean?
+örneğin iki farklı objenin implement ettiği bir interface var bu interface autowired ile inject edildi. hangi obje geçerli olacak?
+  Çözüm 1: @Qualifier
+  Çözüm 2: @Primary
+
+  Callback fonksiyonları
+  @PostConstruct:
+   Bu annotation ile işaretlenmiş fonksiyonlar constructor çağırıldıktan ve tüm dependencyler inject edildikten sonra çağırılır. çok kullanışlı
+
+   @PreDestroy:
+   Bean yok edilmeden hemen önce çağırılır. Veri tabanı connectionlarını kapatmak için, aldığınız kaynakları(memory,dosya vs) serbest bırakmak için,
+   veri tabanını temizlemek gibi görevler için kullanılabilir.
+   iki annotation da bean'in içerisinde methodların üstüne konur.
+
+   Bean tanımlamanın yöntemleri
+   -Annotation based
+   -Java based(@Bean)
+   -XML based
+
+   Stereotype annotations
+   @Controller: Dışardan gelen request'leri karşılayan class'ların başına konur.
+   @Repository: Veri tabanı erişimi sağlayan class'ların başına konur.
+   @Service: Bussiness Logic(İş kuramı) içeren class'ların başına konur.
+
+   Spring web(veya eski bilinen adı ile spring MVC) spring ile web uygulamaları geliştirmek için bir spring modülü.
+
+    @RequestMapping, gelen request'in URL'ine bağlı olarak hangi class/fonksiyona gitmesi gerektiğini spring'e söylemek için kullanılır.

@@ -1,0 +1,27 @@
+@RequestParam
+URL'deki query parametrelerini almak için kullanılır.(ör: /test?name=hebele&surname=hubele)
+
+@PathVariable
+URL'in kendisindeki template halindeki değişkenleri almak için kullanılır. (ör: /courses/15)
+
+Java Bean Validation
+    Gelen requestteki parametrelerin belli koşullara uyup uymadığını kontrol ederiz.
+    Requst objesi henüz elimize gelmeden bazı kriterlere uyduğundan emin oluruz
+    ve kriterlere uymayan requestler için client'a özelleştirilmiş mesajlar dönebiliriz.
+
+Custom validator
+    Bazen kendi validation mantığımızı kendimizim yazması gerekebiliyor.
+    Bunun için 2 farklı çözüm:
+    1. @AssertTrue ve @AssertFalse ile class içerisindeki fonksiyonlar ile geçerleme yapmak
+    2. Yeni bir annotation oluşturup bu annotation'a bir class ile bir logic tanımlamak
+
+RestTemplate
+    Java ile request yollamak sıkıntılı. Spring bu sorunu çözmek için güzel bir yöntem sunmakta, RestTemplate,
+     RequestEntity ve UriComponentsBuilder ile REST isteği atmak çok kolay hale geliyor.
+     RestTemplate'te pek çok farklı faydalı fonksiyonlar var, örneğin RequestEntity ve return type alan exchange fonksiyonu.
+
+Spring Data Repositories
+    Bütün veri tabanı ile ilgili detayları abstract etmenizi sağlar,ve session management, transaction, hibernate gibi
+     detaylardan sizi kurtarır.
+     Sadece interface ve template functionlar ile veri tabanına erişmenizi sağlar.
+     JPA annotationları ile işaretlenmiş classlar ile sorunsuz şekilde çalışır.

@@ -1,0 +1,30 @@
+Spring transaction management
+    Transaction yönetimi hibernate tarafında çok zor. Spring bize çok daha kolay bir alternatif sunuyor.
+
+Uygulama güvenliği
+    isteği yapan kişi kim?
+    ne istiyor ve yetkisi var mı?
+5 temel konsept
+    Authentication (isteği yapan kişinin kim olduğu ile ilgilenir)
+    Authorization (authenticate olan kullanıcının hangi yerkileri olduğu ile ilgilenir)
+    Principal (giriş yapmış olan kullanıcıyı temsil eder)
+    Granted Authority(Giriş yapmış olan kişinin hangi yetkilere sahip olduğunu gösterir)
+    Roles(Granted authority grupları)
+
+WebSecurityConfigurerAdapter
+    Spring security'deki hemen hemen tüm ayarları yapmak için giriş noktası
+    Pek çok farklı ve kullanımı kolay methoduyla konfigürasyon kısmını kolaylaştırıyor.
+    Bu class'ı extend ederek başlanır.
+
+ UserDetails, springin kullanıcıyı temsil etme yöntemi
+ UserDetailsService, kullanıcıyı bir kaynaktan çekmek için kullanılan ana yöntem(LDAP,OPENID,veri tabanı vs)
+ Arkada spring UserDetailsService kullanarak kullanıcı bilgilerini çeker.
+
+Custom AuthenticationProvider
+    Eğer kendi authentication mantığımızı oluşturmak istiyorsak,
+    AuthenticationProvider'ı implement etmemiz gerekiyor.
+
+   SecurityContextHolder ve SecurityContext
+   Authentication başarılı bir şekilde gerçekleştiğinde,
+   authentication objesi uygulama tarafından rahatça erişilebilmesi için SecurityContext objesine konur.
+
